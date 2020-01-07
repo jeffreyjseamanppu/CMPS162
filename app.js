@@ -1,2 +1,3 @@
 //Starting position
-alert('Testing');
+alert('Cavs are awesome');
+console.log('Steelers are not');
