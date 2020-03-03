@@ -1,9 +1,11 @@
 <p id="swi"></p>
+<!--Debug: Increase getday()+Integer or -Integer to produce a new value to test -->
+
 <script>
   var day;
   var greeting;
 
-  switch(new Date().getDay()){
+  switch(new Date().getDay()+4){
     case 0:
     day = "Sunday";
     break;
@@ -26,6 +28,9 @@
     day = "Saturday";
     break;
   }
-  document.getElementById("swi").innerHTML = "Today is " + day;
+  if (day = "Friday"){
+    greeting = "TGIF";
+  }
+  document.getElementById("swi").innerHTML = "Today is " + greeting;
 
 </script>
