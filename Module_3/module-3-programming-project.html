@@ -16,20 +16,58 @@ console.log("Strings");
 //    result to the console.
 
 var countries = ["AustraliA", "greece", "PERU", "ChInA"];
+var capital;
+
+for (var i = 0; i < countries.length; i++) {
+  capital = countries[i].slice(0,1);
+  capital = capital.toUpperCase();
+  countries[i] = countries[i].slice(1);
+  countries[i] = countries[i].toLowerCase();
+  countries[i] = capital + countries[i];
+}
+
+console.log(countries);
 
 // 2. Get every second and third letter from each country and concatenate them.
 //    Print the results to the console.
+
+var secondCharacter;
+var thirdCharacter;
+var conCatList = []
+
+for (var i = 0; i < countries.length; i++) {
+  secondCharacter = countries[i].charAt(1);
+  thirdCharacter = countries[i].charAt(2);
+  conCatList.push(secondCharacter + thirdCharacter);
+}
+
+console.log(conCatList);
 
 // 3. In the sentence below replace 'dart' with 'arrow' by using the indexOf
 //    and slice functions.
 
 var sentence = "Time flies like an dart; fruit flies like a banana.";
+importantReplace = sentence.indexOf("dart");
+sentence = sentence.slice(0,importantReplace) + "arrow" + sentence.slice(importantReplace + 4);
+
+console.log(sentence);
+
+
+
 
 // 4. Find the index of the last occurrence of flies in sentence.
 
+console.log(sentence.lastIndexOf("flies"));
+
+// answer is 31 for last index of flies in sentence
+
 // 5. Prompt the user for a string, reverse it, and show the result to the user.
-
-
+var userInput = prompt("Type string");
+var reverse = "";
+for (var i = 0; i <= userInput.length; i++) {
+  reverse = reverse + userInput.charAt(userInput.length - i);
+}
+alert(reverse);
 
 //---------//
 // Numbers //
@@ -41,14 +79,18 @@ console.log("Numbers");
 var value = 13.3;
 
 // 1. Round the value using normal math rules.
-
+console.log(Math.round(value));
 // 2. Round the value up.
-
+console.log(Math.ceil(value));
 // 3. Round the value down.
-
+console.log(Math.floor(value));
 // 4. Simulate a coin flip by generating a random number. Assume the coin is
 //    fair and print the result, heads or tails, to the console.
+var randomNum = Math.random();
+var improvedNum = (randomNum * 2) + 1;
+var coinFlipCompleted = Math.floor(improvedNum);
 
+console.log(coinFlipCompleted);
 
 
 //-------//
@@ -59,14 +101,23 @@ console.log("Dates");
 // 1. Prompt the user for their age and proceed to show in what year they
 //    were born (you can assume they already had their birthday in the current
 //    year).
+var whatever = prompt("whats your age",whatever);
+alert(2023 - whatever);
 
 // 2. Make a program that does the following: (1) Use a prompt to obtain the
 //    birth year of the user. (2) Use a prompt to obtain the birth month of
 //    the user. (3) Use a prompt to obtain the birth day of the user.
 //    (4) Calculate how old the user is in days. (5) Show the result to
 //    the user.
+var birthYear = prompt("whats your birth year?");
+var birthMonth = prompt("whats your birth month");
+var birthday = prompt("what day were you born on?");
+var birthDayBoy = new Date(birthMonth, birthday, birthYear);
 
-
+console.log(birthDayBoy);
+var msDif = new Date (birthDayBoy).getTime() = new Date().getTime();
+var birthdays = Mathfloor(msDif / 1000 * 60 * 60 * 24);
+alert(birthdays);
 
 </script>
 </head>
